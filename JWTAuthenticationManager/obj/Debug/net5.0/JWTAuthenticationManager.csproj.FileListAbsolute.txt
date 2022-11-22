@@ -10,3 +10,15 @@ C:\Users\cogdotnet1332\source\repos\eAuction_2.0\JWTAuthenticationManager\bin\De
 C:\Users\cogdotnet1332\source\repos\eAuction_2.0\JWTAuthenticationManager\obj\Debug\net5.0\JWTAuthenticationManager.dll
 C:\Users\cogdotnet1332\source\repos\eAuction_2.0\JWTAuthenticationManager\obj\Debug\net5.0\ref\JWTAuthenticationManager.dll
 C:\Users\cogdotnet1332\source\repos\eAuction_2.0\JWTAuthenticationManager\obj\Debug\net5.0\JWTAuthenticationManager.pdb
+C:\FSE\Project\eAuction2.0\JWTAuthenticationManager\bin\Debug\net5.0\JWTAuthenticationManager.deps.json
+C:\FSE\Project\eAuction2.0\JWTAuthenticationManager\bin\Debug\net5.0\JWTAuthenticationManager.dll
+C:\FSE\Project\eAuction2.0\JWTAuthenticationManager\bin\Debug\net5.0\ref\JWTAuthenticationManager.dll
+C:\FSE\Project\eAuction2.0\JWTAuthenticationManager\bin\Debug\net5.0\JWTAuthenticationManager.pdb
+C:\FSE\Project\eAuction2.0\JWTAuthenticationManager\obj\Debug\net5.0\JWTAuthenticationManager.csproj.AssemblyReference.cache
+C:\FSE\Project\eAuction2.0\JWTAuthenticationManager\obj\Debug\net5.0\JWTAuthenticationManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\FSE\Project\eAuction2.0\JWTAuthenticationManager\obj\Debug\net5.0\JWTAuthenticationManager.AssemblyInfoInputs.cache
+C:\FSE\Project\eAuction2.0\JWTAuthenticationManager\obj\Debug\net5.0\JWTAuthenticationManager.AssemblyInfo.cs
+C:\FSE\Project\eAuction2.0\JWTAuthenticationManager\obj\Debug\net5.0\JWTAuthenticationManager.csproj.CoreCompileInputs.cache
+C:\FSE\Project\eAuction2.0\JWTAuthenticationManager\obj\Debug\net5.0\JWTAuthenticationManager.dll
+C:\FSE\Project\eAuction2.0\JWTAuthenticationManager\obj\Debug\net5.0\ref\JWTAuthenticationManager.dll
+C:\FSE\Project\eAuction2.0\JWTAuthenticationManager\obj\Debug\net5.0\JWTAuthenticationManager.pdb
