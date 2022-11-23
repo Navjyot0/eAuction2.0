@@ -37,3 +37,17 @@ C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\Microsoft.Ident
 C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
 C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\JWTAuthenticationManager.dll
 C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\JWTAuthenticationManager.pdb
+C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\AspNetCore.Identity.MongoDbCore.dll
+C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\DnsClient.dll
+C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\MongoDB.Bson.dll
+C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\MongoDB.Driver.dll
+C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\MongoDB.Driver.Core.dll
+C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
+C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\MongoDbGenericRepository.dll
+C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\SharpCompress.dll
+C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\runtimes\win\native\libzstd.dll
+C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\runtimes\win\native\snappy32.dll
+C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
+C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
+C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
+C:\FSE\Project\eAuction2.0\AuthenticationWebApi\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll

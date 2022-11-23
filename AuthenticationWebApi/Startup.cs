@@ -1,3 +1,5 @@
+using AuthenticationWebApi.Models;
+using AuthenticationWebApi.Settings;
 using JWTAuthenticationManager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +29,13 @@ namespace AuthenticationWebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var mongoDbSettings = Configuration.GetSection(nameof(MongoDbConfig)).Get<MongoDbConfig>();
+
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
+                .AddMongoDbStores<ApplicationUser, ApplicationRole, Guid>
+                (
+                    mongoDbSettings.ConnectionString, mongoDbSettings.Name
+                );
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
