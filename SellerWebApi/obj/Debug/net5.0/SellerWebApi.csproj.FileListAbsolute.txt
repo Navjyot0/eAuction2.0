@@ -11,7 +11,6 @@ C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Microsoft.OpenApi.dll
 C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\FSE\Project\eAuction2.0\SellerWebApi\obj\Debug\net5.0\SellerWebApi.csproj.AssemblyReference.cache
 C:\FSE\Project\eAuction2.0\SellerWebApi\obj\Debug\net5.0\SellerWebApi.GeneratedMSBuildEditorConfig.editorconfig
 C:\FSE\Project\eAuction2.0\SellerWebApi\obj\Debug\net5.0\SellerWebApi.AssemblyInfoInputs.cache
 C:\FSE\Project\eAuction2.0\SellerWebApi\obj\Debug\net5.0\SellerWebApi.AssemblyInfo.cs
@@ -27,3 +26,19 @@ C:\FSE\Project\eAuction2.0\SellerWebApi\obj\Debug\net5.0\SellerWebApi.dll
 C:\FSE\Project\eAuction2.0\SellerWebApi\obj\Debug\net5.0\ref\SellerWebApi.dll
 C:\FSE\Project\eAuction2.0\SellerWebApi\obj\Debug\net5.0\SellerWebApi.pdb
 C:\FSE\Project\eAuction2.0\SellerWebApi\obj\Debug\net5.0\SellerWebApi.genruntimeconfig.cache
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\DnsClient.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\MongoDB.Bson.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\MongoDB.Driver.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\MongoDB.Driver.Core.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\SharpCompress.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Snappier.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\ZstdSharp.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\obj\Debug\net5.0\SellerWebApi.csproj.AssemblyReference.cache

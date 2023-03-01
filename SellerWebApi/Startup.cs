@@ -6,7 +6,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using MongoDB.Driver;
+using SellerWebApi.Repository;
+using SellerWebApi.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,9 +30,16 @@ namespace SellerWebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<ProductDbSettings>(Configuration.GetSection(nameof(ProductDbSettings)));
+
+            services.AddSingleton<IProductDbSettings>(sp => sp.GetRequiredService<IOptions<ProductDbSettings>>().Value);
+
+            services.AddSingleton<IMongoClient>(s => new MongoClient(Configuration.GetValue<string>("ProductDbSettings:ConnectionString")));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
+            services.AddSwaggerGen(c =>     
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SellerWebApi", Version = "v1" });
             });
