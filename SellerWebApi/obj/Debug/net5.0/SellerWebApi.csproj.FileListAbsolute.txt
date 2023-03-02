@@ -42,3 +42,13 @@ C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Microsoft.EntityFramewo
 C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\FSE\Project\eAuction2.0\SellerWebApi\obj\Debug\net5.0\SellerWebApi.csproj.AssemblyReference.cache
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Abstractions.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\JWTAuthenticationManager.dll
+C:\FSE\Project\eAuction2.0\SellerWebApi\bin\Debug\net5.0\JWTAuthenticationManager.pdb

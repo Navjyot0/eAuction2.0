@@ -1,3 +1,4 @@
+using JWTAuthenticationManager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -39,6 +40,9 @@ namespace SellerWebApi
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddControllers();
+
+            services.AddCustomJwtAuthentication();
+
             services.AddSwaggerGen(c =>     
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SellerWebApi", Version = "v1" });
@@ -59,6 +63,7 @@ namespace SellerWebApi
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

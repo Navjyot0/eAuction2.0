@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SellerWebApi.Models;
 using SellerWebApi.Repository;
@@ -20,23 +21,11 @@ namespace SellerWebApi.Controllers
         {
             this.db = _db;
         }
-        // GET: api/<ProductController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<ProductController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
 
         // POST api/<ProductController>
         [HttpPost]
         [Route("AddProduct")]
+        [Authorize]
         public ActionResult AddProduct(Product product)
         {
             if (ModelState.IsValid)
@@ -45,18 +34,6 @@ namespace SellerWebApi.Controllers
                 return StatusCode(StatusCodes.Status201Created);
             }
             return StatusCode(StatusCodes.Status400BadRequest);
-        }
-
-        // PUT api/<ProductController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<ProductController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

@@ -22,11 +22,23 @@
         }
       ],
       "UpstreamPathTemplate": "/seller",
-      "UpstreamHttpMethod": [ "GET", "POST" ]//,
+      "UpstreamHttpMethod": [ "GET", "POST" ] //,
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer",
       //  "AllowedScopes": []
       //}
+    },
+    {
+      "DownstreamPathTemplate": "/api/Product/AddProduct",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44397"
+        }
+      ],
+      "UpstreamPathTemplate": "/e-auction/api/v1/seller/add-product",//"/seller/addproduct",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
     },
     {
       "DownstreamPathTemplate": "/Account",
@@ -38,6 +50,18 @@
         }
       ],
       "UpstreamPathTemplate": "/Account",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/Account/CreateUser",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44378"
+        }
+      ],
+      "UpstreamPathTemplate": "/Account/CreateUser",
       "UpstreamHttpMethod": [ "GET", "POST" ]
     }
   ]
