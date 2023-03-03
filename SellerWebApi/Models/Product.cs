@@ -35,5 +35,8 @@ namespace SellerWebApi.Models
         [BsonElement("bidEndDate")]
         [BsonRepresentation(BsonType.DateTime)]
         public DateTime BidEndDate { get; set; }
+
+        [BsonElement("sellerId")]
+        public string Seller { get; set; }
     }
 }

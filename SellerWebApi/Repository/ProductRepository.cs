@@ -11,9 +11,20 @@ namespace SellerWebApi.Repository
     public class ProductRepository : Repository<Product>, IProductRepository
     {
         //Product specific code here
+        protected readonly IMongoCollection<Product> _dbContext;
         public ProductRepository(IMongoCollection<Product> _dbContext) : base(_dbContext)
         {
+            this._dbContext = _dbContext;
+        }
 
+        public Product GetProduct(string productId)
+        {
+            return this._dbContext.Find(product => product.ProductId == productId).FirstOrDefault();
+        }
+
+        public void DeleteProduct(string productId)
+        {
+            this._dbContext.DeleteOne(product => product.ProductId == productId);
         }
     }
 }

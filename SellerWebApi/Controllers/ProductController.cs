@@ -14,6 +14,8 @@ namespace SellerWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class ProductController : ControllerBase
     {
         private readonly IUnitOfWork db;
@@ -25,7 +27,6 @@ namespace SellerWebApi.Controllers
         // POST api/<ProductController>
         [HttpPost]
         [Route("AddProduct")]
-        [Authorize]
         public ActionResult AddProduct(Product product)
         {
             if (ModelState.IsValid)
@@ -34,6 +35,28 @@ namespace SellerWebApi.Controllers
                 return StatusCode(StatusCodes.Status201Created);
             }
             return StatusCode(StatusCodes.Status400BadRequest);
+        }
+
+        [HttpGet]
+        [Route("GetProductList")]
+        public ActionResult<IEnumerable<Product>> GetProductList()
+        {
+            return Ok(this.db.product.GetAll());
+        }
+
+        [HttpGet]
+        [Route("GetProductDetails")]
+        public ActionResult<Product> GetProductDetails(string productId)
+        {
+            return Ok(this.db.product.GetProduct(productId));
+        }
+
+        [HttpGet]
+        [Route("DeleteProduct")]
+        public ActionResult DeleteProduct(string productId)
+        {
+            this.db.product.DeleteProduct(productId);
+            return StatusCode(StatusCodes.Status200OK);
         }
     }
 }

@@ -12,6 +12,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using JWTAuthenticationManager;
+using MongoDB.Driver;
+using BuyerWebApi.UnitOfWork;
+using BuyerWebApi.Settings;
+using Microsoft.Extensions.Options;
 
 namespace BuyerWebApi
 {
@@ -27,7 +31,10 @@ namespace BuyerWebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.Configure<BuyerDbSettings>(Configuration.GetSection(nameof(BuyerDbSettings)));
+            services.AddSingleton<IBuyerDbSettings>(sp => sp.GetRequiredService<IOptions<BuyerDbSettings>>().Value);
+            services.AddSingleton<IMongoClient>(s => new MongoClient(Configuration.GetValue<string>("BuyerDbSettings:ConnectionString")));
+            services.AddScoped<IUnitOfWork, BuyerWebApi.UnitOfWork.UnitOfWork>();
             services.AddControllers();
             services.AddCustomJwtAuthentication();
             services.AddSwaggerGen(c =>

@@ -9,5 +9,9 @@ namespace SellerWebApi.Repository
     public interface IProductRepository:IRepository<Product>
     {
         //Product specific code here
+
+        Product GetProduct(string productId);
+
+        void DeleteProduct(string productId);
     }
 }

@@ -37,3 +37,14 @@ C:\FSE\Project\eAuction2.0\BuyerWebApi\obj\Debug\net5.0\BuyerWebApi.dll
 C:\FSE\Project\eAuction2.0\BuyerWebApi\obj\Debug\net5.0\ref\BuyerWebApi.dll
 C:\FSE\Project\eAuction2.0\BuyerWebApi\obj\Debug\net5.0\BuyerWebApi.pdb
 C:\FSE\Project\eAuction2.0\BuyerWebApi\obj\Debug\net5.0\BuyerWebApi.genruntimeconfig.cache
+C:\FSE\Project\eAuction2.0\BuyerWebApi\bin\Debug\net5.0\DnsClient.dll
+C:\FSE\Project\eAuction2.0\BuyerWebApi\bin\Debug\net5.0\MongoDB.Bson.dll
+C:\FSE\Project\eAuction2.0\BuyerWebApi\bin\Debug\net5.0\MongoDB.Driver.dll
+C:\FSE\Project\eAuction2.0\BuyerWebApi\bin\Debug\net5.0\MongoDB.Driver.Core.dll
+C:\FSE\Project\eAuction2.0\BuyerWebApi\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
+C:\FSE\Project\eAuction2.0\BuyerWebApi\bin\Debug\net5.0\SharpCompress.dll
+C:\FSE\Project\eAuction2.0\BuyerWebApi\bin\Debug\net5.0\Snappier.dll
+C:\FSE\Project\eAuction2.0\BuyerWebApi\bin\Debug\net5.0\ZstdSharp.dll
+C:\FSE\Project\eAuction2.0\BuyerWebApi\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
+C:\FSE\Project\eAuction2.0\BuyerWebApi\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
+C:\FSE\Project\eAuction2.0\BuyerWebApi\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
