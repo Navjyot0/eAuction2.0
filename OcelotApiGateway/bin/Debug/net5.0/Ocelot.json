@@ -65,12 +65,12 @@
       "UpstreamHttpMethod": [ "GET", "POST" ]
     },
     {
-      "DownstreamPathTemplate": "/api/Bid/PlaceBid",
+      "DownstreamPathTemplate": "/api/Buyer/PlaceBid",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "44397"
+          "Port": "44383"
         }
       ],
       "UpstreamPathTemplate": "/e-auction/api/v1/buyer/place-bid", //"/buyer/place-bid",
@@ -98,6 +98,18 @@
         }
       ],
       "UpstreamPathTemplate": "/Account/CreateUser",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/WeatherForecast",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44378"
+        }
+      ],
+      "UpstreamPathTemplate": "/Account/WeatherForecast",
       "UpstreamHttpMethod": [ "GET", "POST" ]
     }
   ]

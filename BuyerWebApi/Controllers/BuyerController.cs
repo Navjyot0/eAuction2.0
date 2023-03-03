@@ -28,9 +28,9 @@ namespace BuyerWebApi.Controllers
         {
             if (ModelState.IsValid)
             {
-                //var user = System.Security.Claims.ClaimTypes.NameIdentifier;
-                //var email = User.FindFirst("sub")?.Value;
-                //string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                var user = System.Security.Claims.ClaimTypes.NameIdentifier;
+                var email = User.FindFirst("sub")?.Value;
+                string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
                 this.db.bid.Add(bid);
                 return StatusCode(StatusCodes.Status201Created);
             }
