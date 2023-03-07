@@ -15,5 +15,6 @@ namespace SellerWebApi.Models
         public int StartingPrice { get; set; }
         public DateTime BidEndDate { get; set; }
         public User SellerDetails { get; set; }
+        public IEnumerable<Bid> Bids { get; set; }
     }
 }

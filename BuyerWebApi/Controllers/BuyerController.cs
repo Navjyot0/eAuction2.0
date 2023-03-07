@@ -28,11 +28,32 @@ namespace BuyerWebApi.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = System.Security.Claims.ClaimTypes.NameIdentifier;
-                var email = User.FindFirst("sub")?.Value;
-                string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                this.db.bid.Add(bid);
-                return StatusCode(StatusCodes.Status201Created);
+                Product product = this.db.product.GetProduct(bid.ProductId);
+
+                if (product.SellerEmailId == bid.BuyerEmailId)
+                    throw new Exception("Seller can't make bid");
+
+                if (product != null && product.BidEndDate > DateTime.Now)
+                {
+                    this.db.bid.PlaceBid(bid);
+                    return StatusCode(StatusCodes.Status201Created, bid);
+                }
+                else
+                {
+                    throw new Exception("Bid end date was: " + product.BidEndDate);
+                }
+            }
+            return StatusCode(StatusCodes.Status400BadRequest);
+        }
+
+        [HttpPut]
+        [Route("UpdateBid")]
+        public ActionResult UpdateBid(Bid bid)
+        {
+            if (ModelState.IsValid)
+            {
+                this.db.bid.UpdateBid(bid);
+                return StatusCode(StatusCodes.Status201Created, bid);
             }
             return StatusCode(StatusCodes.Status400BadRequest);
         }

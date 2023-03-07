@@ -9,6 +9,7 @@ namespace SellerWebApi.Repository
     {
         IProductRepository product { get; }
         IUserRepository user { get; }
+        IBidRepository bids { get; }
         //int Complete();
     }
 }

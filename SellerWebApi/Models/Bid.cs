@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BuyerWebApi.Models
+namespace SellerWebApi.Models
 {
     public class Bid
     {
@@ -22,5 +22,11 @@ namespace BuyerWebApi.Models
 
         [BsonElement("buyerEmailId")]
         public string BuyerEmailId { get; set; }
+
+        [BsonElement("buyerName")]
+        public string BuyerName { get; set; }
+
+        [BsonElement("buyerPhone")]
+        public string BuyerPhone { get; set; }
     }
 }

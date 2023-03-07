@@ -32,7 +32,7 @@ namespace SellerWebApi.Controllers
             if (ModelState.IsValid)
             {
                 this.db.product.Add(product);
-                return StatusCode(StatusCodes.Status201Created);
+                return StatusCode(StatusCodes.Status201Created, product);
             }
             return StatusCode(StatusCodes.Status400BadRequest);
         }
@@ -61,15 +61,44 @@ namespace SellerWebApi.Controllers
                 SellerDetails = this.db.user.GetUser(product.SellerEmailId)
             };
 
-            return Ok(productDetails);
+            List<Bid> bids = this.db.bids.GetByBidsProductId(product.ProductId).ToList();
+            List<Bid> allBids = new List<Bid>();
+            foreach (Bid b in bids)
+            {
+                User _user = this.db.user.GetUser(b.BuyerEmailId);
+                b.BuyerName = _user.FirstName + " " + _user.LastName;
+                b.BuyerPhone = _user.Phone;
+                allBids.Add(b);
+            }
+            productDetails.Bids = allBids;
+
+            return StatusCode(StatusCodes.Status201Created, productDetails);
         }
 
         [HttpGet]
         [Route("DeleteProduct")]
         public ActionResult DeleteProduct(string productId)
         {
+            Product product = this.db.product.GetProduct(productId);
+            ProductDetails productDetails = new ProductDetails()
+            {
+                ProductId = product.ProductId,
+                ProductName = product.ProductName,
+                ShortDescription = product.ShortDescription,
+                DetailedDescription = product.DetailedDescription,
+                Category = product.Category,
+                StartingPrice = product.StartingPrice,
+                BidEndDate = product.BidEndDate,
+                SellerDetails = this.db.user.GetUser(product.SellerEmailId),
+                Bids = this.db.bids.GetByBidsProductId(product.ProductId).ToList()
+            };
+
+            if (productDetails.BidEndDate < DateTime.Now)
+                throw new Exception("Can't delete: bid end date exided");
+            if (productDetails.Bids.Count() > 0)
+                throw new Exception("Can't delete: there are already bids");
             this.db.product.DeleteProduct(productId);
-            return StatusCode(StatusCodes.Status200OK);
+            return StatusCode(StatusCodes.Status202Accepted, productId + "Deleted Successfully");
         }
     }
 }

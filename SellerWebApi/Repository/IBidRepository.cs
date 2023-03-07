@@ -1,14 +1,13 @@
-﻿using BuyerWebApi.Models;
+﻿using SellerWebApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BuyerWebApi.Repository
+namespace SellerWebApi.Repository
 {
     public interface IBidRepository : IRepository<Bid>
     {
-        void PlaceBid(Bid bid);
-        void UpdateBid(Bid bid);
+        IEnumerable<Bid> GetByBidsProductId(string ProductId);
     }
 }

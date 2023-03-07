@@ -9,5 +9,6 @@ namespace BuyerWebApi.UnitOfWork
     public interface IUnitOfWork
     {
         IBidRepository bid { get; }
+        IProductRepository product { get; }
     }
 }

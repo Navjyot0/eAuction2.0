@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BuyerWebApi.Repository
 {
-    public interface IBidRepository : IRepository<Bid>
+    public interface IProductRepository:IRepository<Product>
     {
-        void PlaceBid(Bid bid);
-        void UpdateBid(Bid bid);
+        //Product specific code here
+        Product GetProduct(string productId);
     }
 }

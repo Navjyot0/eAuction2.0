@@ -13,6 +13,7 @@ namespace BuyerWebApi.UnitOfWork
     {
         private IBuyerDbSettings _settings;
         public IBidRepository bid { get; private set; }
+        public IProductRepository product { get; private set; }
 
         public UnitOfWork(IBuyerDbSettings settings, IMongoClient mongoClient)//(DbContext eAuctionContext)
         {
@@ -21,6 +22,7 @@ namespace BuyerWebApi.UnitOfWork
             this._settings = settings;
             var database = mongoClient.GetDatabase(this._settings.DatabaseName);
             this.bid = new BidRepository(database.GetCollection<Bid>(this._settings.CollectionName));
+            this.product = new ProductRepository(database.GetCollection<Product>("Products"));
         }
     }
 }

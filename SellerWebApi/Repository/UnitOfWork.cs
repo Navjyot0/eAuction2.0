@@ -14,6 +14,7 @@ namespace SellerWebApi.Repository
         //private readonly DbContext _eAuctionContext;
         public IProductRepository product { get; private set; }
         public IUserRepository user { get; private set; }
+        public IBidRepository bids { get; private set; }
 
         private IProductDbSettings _settings;
 
@@ -25,6 +26,7 @@ namespace SellerWebApi.Repository
             var database = mongoClient.GetDatabase(this._settings.DatabaseName);
             this.product = new ProductRepository(database.GetCollection<Product>(this._settings.ProductCollectionName));
             this.user = new UserRepository(database.GetCollection<User>("UserInfo"));
+            this.bids = new BidRepository(database.GetCollection<Bid>("BuyerBids"));
         }
 
         //public int Complete()
