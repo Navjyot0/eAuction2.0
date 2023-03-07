@@ -22,5 +22,7 @@ namespace BuyerWebApi.Models
 
         [BsonElement("buyerId")]
         public string Buyer { get; set; }
+        [BsonElement("buyerEmailId")]
+        public string BuyerEmailId { get; set; }
     }
 }

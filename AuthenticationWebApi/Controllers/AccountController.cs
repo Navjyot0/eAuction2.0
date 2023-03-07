@@ -1,4 +1,5 @@
 ﻿using AuthenticationWebApi.Models;
+using AuthenticationWebApi.Repository;
 using JWTAuthenticationManager;
 using JWTAuthenticationManager.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -19,11 +20,13 @@ namespace AuthenticationWebApi.Controllers
     {
         public UserManager<ApplicationUser> _userManager;
         private readonly JWTTokenHander _jWTTokenHander;
+        private readonly IUnitOfWork _userDb;
 
-        public AccountController(UserManager<ApplicationUser> userManager, JWTTokenHander jWTTokenHander)
+        public AccountController(UserManager<ApplicationUser> userManager, JWTTokenHander jWTTokenHander, IUnitOfWork userDb)
         {
             this._userManager = userManager;
             this._jWTTokenHander = jWTTokenHander;
+            this._userDb = userDb;
         }
 
         // POST api/<UserController>
@@ -39,7 +42,7 @@ namespace AuthenticationWebApi.Controllers
                     UserName = user.Email,
                     Email = user.Email
                 };
-
+                this._userDb.user.Add(user);
                 IdentityResult result = await _userManager.CreateAsync(applicationUser, user.Password);
                 if (result.Succeeded)
                     return StatusCode(StatusCodes.Status201Created);
@@ -53,13 +56,16 @@ namespace AuthenticationWebApi.Controllers
         [HttpPost]
         public ActionResult<AuthenticationResponse> Authenticate(AuthenticationRequest authenticationRequest)
         {
-            var account = _userManager.Users.Where(u => u.UserName == authenticationRequest.UserName).FirstOrDefault(); // && u.PasswordHash == authenticationRequest.Password).FirstOrDefault();
-
+            var account = _userManager.Users.Where(u => u.UserName == authenticationRequest.UserName).FirstOrDefault();
+            var PasswordHasher = new PasswordHasher<ApplicationUser>();
+            var checkPwd = PasswordHasher.VerifyHashedPassword(account, account.PasswordHash, authenticationRequest.Password);
+            
+            if (checkPwd == PasswordVerificationResult.Failed) return Unauthorized();
+            
             UserAccount userAccount = account != null ? new UserAccount() { UserName = account?.UserName, Role = "" } : null;
-
             var authenticationResponse = _jWTTokenHander.GenerateJWTToken(userAccount);
             if (authenticationResponse == null) return Unauthorized();
-
+            
             return authenticationResponse;
         }
     }

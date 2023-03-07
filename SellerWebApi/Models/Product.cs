@@ -36,7 +36,7 @@ namespace SellerWebApi.Models
         [BsonRepresentation(BsonType.DateTime)]
         public DateTime BidEndDate { get; set; }
 
-        [BsonElement("sellerId")]
-        public string Seller { get; set; }
+        [BsonElement("sellerEmailId")]
+        public string SellerEmailId { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 using AuthenticationWebApi.Models;
+using AuthenticationWebApi.Repository;
 using AuthenticationWebApi.Settings;
 using JWTAuthenticationManager;
 using Microsoft.AspNetCore.Builder;
@@ -9,7 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +39,12 @@ namespace AuthenticationWebApi
                 (
                     mongoDbSettings.ConnectionString, mongoDbSettings.Name
                 );
+
+            services.Configure<UserDbSettings>(Configuration.GetSection(nameof(UserDbSettings)));
+            services.AddSingleton<IUserDbSettings>(sp => sp.GetRequiredService<IOptions<UserDbSettings>>().Value);
+            services.AddSingleton<IMongoClient>(s => new MongoClient(Configuration.GetValue<string>("UserDbSettings:ConnectionString")));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

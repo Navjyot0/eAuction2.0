@@ -48,7 +48,20 @@ namespace SellerWebApi.Controllers
         [Route("GetProductDetails")]
         public ActionResult<Product> GetProductDetails(string productId)
         {
-            return Ok(this.db.product.GetProduct(productId));
+            Product product = this.db.product.GetProduct(productId);
+            ProductDetails productDetails = new ProductDetails()
+            {
+                ProductId = product.ProductId,
+                ProductName = product.ProductName,
+                ShortDescription = product.ShortDescription,
+                DetailedDescription = product.DetailedDescription,
+                Category = product.Category,
+                StartingPrice = product.StartingPrice,
+                BidEndDate = product.BidEndDate,
+                SellerDetails = this.db.user.GetUser(product.SellerEmailId)
+            };
+
+            return Ok(productDetails);
         }
 
         [HttpGet]
