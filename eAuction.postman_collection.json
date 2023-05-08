@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "937d6934-5bda-42ce-a373-83bb7330b10f",
+		"name": "eAuction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Account - CreateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"Seller001@example.com\",\r\n  \"password\": \"Seller001@example\",\r\n  \"firstName\": \"user_firstname\",\r\n  \"lastName\": \"user_lastname\",\r\n  \"address\": \"user address\",\r\n  \"city\": \"user city\",\r\n  \"state\": \"user state\",\r\n  \"pin\": \"user pin\",\r\n  \"phone\": \"0123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44300/Account/CreateUser",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44300",
+							"path": [
+								"Account",
+								"CreateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account - JWT Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "aut",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\":\"user001@example.com\",\r\n    \"Password\":\"User001@example\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44300/Account",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44300",
+							"path": [
+								"Account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account - WeatherForecast",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcjAxQGV4YW1wbGUuY29tIiwibmJmIjoxNjc3Njc4NDIzLCJleHAiOjE2Nzc2Nzk2MjMsImlhdCI6MTY3NzY3ODQyM30.V-XqnhI4Z4yksiTVw3dxSaG4P_kQxOZZd7FBEd5K-zY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44300/WeatherForecast",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44300",
+							"path": [
+								"WeatherForecast"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Buyer",
+			"item": [
+				{
+					"name": "Buyer - Weather",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcjAxQGV4YW1wbGUuY29tIiwibmJmIjoxNjc3Njc4NDIzLCJleHAiOjE2Nzc2Nzk2MjMsImlhdCI6MTY3NzY3ODQyM30.V-XqnhI4Z4yksiTVw3dxSaG4P_kQxOZZd7FBEd5K-zY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44300/Buyer",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44300",
+							"path": [
+								"Buyer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buyer - Place bid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcjAwMUBleGFtcGxlLmNvbSIsIm5iZiI6MTY3ODE2NDU0NiwiZXhwIjoxNjc4MTY1NzQ2LCJpYXQiOjE2NzgxNjQ1NDZ9.h2wJzsKQJhgWGnDkNj9BrcfpNxdJ3l6r683itoKSzqw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"6405ae5f1f7e4085a765cc96\",\r\n  \"bidAmount\": 1210,\r\n  \"buyerEmailId\": \"buyer001@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44300/e-auction/api/v1/buyer/place-bid",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44300",
+							"path": [
+								"e-auction",
+								"api",
+								"v1",
+								"buyer",
+								"place-bid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buyer - Update bid",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcjAwMUBleGFtcGxlLmNvbSIsIm5iZiI6MTY3ODE2ODA0OCwiZXhwIjoxNjc4MTY5MjQ4LCJpYXQiOjE2NzgxNjgwNDh9._4ZdVK__TCYsA3QIdyKZ3Na-Myrp5txR853i5zLvS7Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"6405ae5f1f7e4085a765cc96\",\r\n  \"bidAmount\": 12004,\r\n  \"buyerEmailId\": \"buyer001@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44300/e-auction/api/v1/buyer/update-bid",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44300",
+							"path": [
+								"e-auction",
+								"api",
+								"v1",
+								"buyer",
+								"update-bid"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Seller",
+			"item": [
+				{
+					"name": "Seller - Weather",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44300/Seller",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44300",
+							"path": [
+								"Seller"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Seller - AddProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcjAwMUBleGFtcGxlLmNvbSIsIm5iZiI6MTY3ODA5MzgxNiwiZXhwIjoxNjc4MDk1MDE2LCJpYXQiOjE2NzgwOTM4MTZ9.4FuW4R57GvgjQp7IseAPWnw9J7x9bocnOhw7VgP_IKQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productName\": \"Apple Laptop\",\r\n  \"shortDescription\": \"Laptop | 4GB Ram | 256GB SDD\",\r\n  \"detailedDescription\": \"Laptop | 4GB Ram | 256GB SDD\",\r\n  \"category\": \"Laptop\",\r\n  \"startingPrice\": 23000,\r\n  \"bidEndDate\": \"2023-03-06\",\r\n  \"sellerEmailId\":\"user001@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44300/e-auction/api/v1/seller/add-product",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44300",
+							"path": [
+								"e-auction",
+								"api",
+								"v1",
+								"seller",
+								"add-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Seller - Show bids (productId=63ff61221d0ae3148684de9e)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcjAwMUBleGFtcGxlLmNvbSIsIm5iZiI6MTY3ODE2NDU0NiwiZXhwIjoxNjc4MTY1NzQ2LCJpYXQiOjE2NzgxNjQ1NDZ9.h2wJzsKQJhgWGnDkNj9BrcfpNxdJ3l6r683itoKSzqw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44300/e-auction/api/v1/seller/show-bids?productId=6405ae5f1f7e4085a765cc96",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44300",
+							"path": [
+								"e-auction",
+								"api",
+								"v1",
+								"seller",
+								"show-bids"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "6405ae5f1f7e4085a765cc96"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Seller - Delete (productId=63ff5a9d4d24643c438f2335)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44300/e-auction/api/v1/seller/delete?productId=6405ae5f1f7e4085a765cc96",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44300",
+							"path": [
+								"e-auction",
+								"api",
+								"v1",
+								"seller",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "6405ae5f1f7e4085a765cc96"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
